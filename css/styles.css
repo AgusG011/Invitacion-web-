@@ -1,0 +1,324 @@
+/* =====================
+   SISTEMA DE DISEÑO
+===================== */
+:root {
+  /* Colores */
+  --color-background: #f7f6f3; /* Blanco perla */
+  --color-gold: #c8b273; /* Dorado suave */
+  --color-gold-light: #e4d9ad;
+  --color-text: #2f2f2f;
+  --color-muted: #6b6b6b;
+
+  /* Tipografías */
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  /* Escala tipográfica */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 2rem;
+  --text-hero: 3rem;
+
+  /* Espaciados */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Bordes */
+  --radius-sm: 2px;
+
+  /* Animaciones */
+  --transition-fast: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+/* =====================
+   RESET / BASE
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  min-height: 100vh;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.names {
+  font-family: var(--font-serif);
+  font-size: var(--text-hero);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.divider {
+  width: 90px;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: var(--space-md) 0;
+}
+
+.date {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+  margin-bottom: var(--space-lg);
+}
+
+/* =====================
+   COUNTDOWN
+===================== */
+.countdown {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.time-box {
+  text-align: center;
+}
+
+.time-box .number {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  display: block;
+}
+
+.time-box .label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-muted);
+}
+
+/* =====================
+   SECCIONES GENERALES
+===================== */
+.section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.section h2 {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  margin-bottom: var(--space-md);
+}
+
+.section p {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-xs);
+}
+
+/* =====================
+   DRESS CODE
+===================== */
+.dresscode p {
+  font-size: var(--text-lg);
+  letter-spacing: 0.5px;
+}
+
+/* =====================
+   RSVP
+===================== */
+.rsvp-text {
+  margin-bottom: var(--space-md);
+}
+
+.rsvp-button {
+  display: inline-block;
+  padding: 0.9rem 2.8rem;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: all var(--transition-slow);
+}
+
+.rsvp-button:hover {
+  background-color: var(--color-gold);
+  color: #ffffff;
+}
+
+/* Botón secundario */
+.secondary-button {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-size: var(--text-xs);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-gold);
+}
+
+/* =====================
+   BLOQUES DE FOTO
+===================== */
+.photo-block {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: var(--space-lg) auto;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: var(--color-background);
+}
+
+.photo-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero con más presencia */
+.photo-hero {
+  max-width: 480px;
+  margin-top: var(--space-xl);
+}
+
+/* =====================
+   EFECTO PAPEL RASGADO
+===================== */
+.photo-block::before,
+.photo-block::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-background);
+  z-index: 2;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+.photo-block::before {
+  top: 0;
+  mask-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'>\
+    <path d='M0,80 C150,120 300,20 450,60 600,100 750,40 900,70 1050,100 1200,50 1200,50 L1200,0 L0,0 Z' fill='black'/>\
+  </svg>");
+}
+
+.photo-block::after {
+  bottom: 0;
+  transform: rotate(180deg);
+  mask-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'>\
+    <path d='M0,80 C150,120 300,20 450,60 600,100 750,40 900,70 1050,100 1200,50 1200,50 L1200,0 L0,0 Z' fill='black'/>\
+  </svg>");
+}
+
+/* =====================
+   GALERÍA
+===================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =====================
+   ANIMACIONES SCROLL
+===================== */
+.fade-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+.fade-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .fade-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  padding: var(--space-md);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+  .names {
+    font-size: 2.2rem;
+  }
+
+  .countdown {
+    gap: var(--space-sm);
+  }
+
+  .section {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .photo-block::before,
+  .photo-block::after {
+    height: 28px;
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
