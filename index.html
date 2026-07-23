@@ -1,169 +1,769 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agustín & Micaela</title>
 
-    <meta
-      name="description"
-      content="Invitación de boda de Agustín y Micaela. 6 de febrero de 2027."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+  <title>Agustín & Micaela | 6 de febrero de 2027</title>
 
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/main.js" defer></script>
-  </head>
+  <meta name="description"
+    content="Con mucha alegría queremos invitarte a compartir el día más importante de nuestras vidas.">
 
-  <body class="opening">
-    <!-- DECORACIÓN OLD MONEY -->
-    <div class="floral-decoration left"></div>
-    <div class="floral-decoration right"></div>
+  <meta name="theme-color" content="#c8b273">
 
-    <!-- HERO -->
-    <header class="hero">
-      <div class="hero-frame top"></div>
-      <div class="hero-frame bottom"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-      <div class="monogram">
-        <span class="initial a">A</span>
-        <span class="initial m">M</span>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/main.js" defer></script>
+
+</head>
+
+<body class="opening">
+
+  <!-- ==========================
+        DECORACIÓN DE FONDO
+  =========================== -->
+
+  <div class="floral-decoration left"></div>
+  <div class="floral-decoration right"></div>
+
+  <div class="floating-particles"></div>
+
+  <!-- ==========================
+        SOBRE DE APERTURA
+  =========================== -->
+
+  <div class="envelope-container" id="envelope">
+
+    <div class="envelope">
+
+      <div class="flap"></div>
+
+      <!-- Tarjeta -->
+
+      <div class="invitation-card">
+
+        <div class="envelope-monogram">
+
+          <span class="initial a">A</span>
+          <span class="initial m">M</span>
+
+        </div>
+
+        <p class="open-text">
+          Haz clic en el sello
+        </p>
+
       </div>
 
-      <h1 class="names">Agustín & Micaela</h1>
+      <!-- Sello -->
+
+      <div class="seal" id="seal">
+
+        <span class="initial a">A</span>
+        <span class="initial m">M</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ==========================
+          HERO
+  =========================== -->
+
+  <header class="hero">
+
+    <div class="hero-frame top"></div>
+    <div class="hero-frame bottom"></div>
+
+    <div class="hero-content">
+
+      <div class="monogram">
+
+        <span class="initial a">A</span>
+        <span class="initial m">M</span>
+
+      </div>
+
+      <p class="hero-subtitle">
+        Tenemos el honor de invitarte a celebrar nuestra boda
+      </p>
+
+      <h1 class="names">
+        Agustín
+        <span>&</span>
+        Micaela
+      </h1>
+
       <div class="divider"></div>
-      <p class="date">6 de febrero de 2027</p>
+
+      <p class="date">
+        <time datetime="2027-02-06">
+          6 de febrero de 2027
+        </time>
+      </p>
+
+      <!-- Cuenta regresiva -->
 
       <div class="countdown">
+
         <div class="time-box">
           <span class="number" id="days">00</span>
           <span class="label">Días</span>
         </div>
+
         <div class="time-box">
           <span class="number" id="hours">00</span>
           <span class="label">Horas</span>
         </div>
+
         <div class="time-box">
           <span class="number" id="minutes">00</span>
           <span class="label">Minutos</span>
         </div>
+
         <div class="time-box">
           <span class="number" id="seconds">00</span>
           <span class="label">Segundos</span>
         </div>
+
       </div>
+
       <div class="gold-seal">
+
         <span class="initial a">A</span>
         <span class="initial m">M</span>
+
       </div>
-    </header>
 
-    <main>
-      <section class="photo-block photo-hero fade-section">
-        <img src="images/hero.jpg" alt="Agustín y Micaela" />
-      </section>
+    </div>
 
-      <section class="section timeline fade-section">
-        <h2>El evento</h2>
-        <p><strong>Fecha:</strong> 6 de febrero de 2027</p>
-        <p><strong>Hora:</strong> A definir</p>
-        <p><strong>Lugar:</strong> A definir</p>
-      </section>
+  </header>
 
-      <section class="photo-block fade-section">
-        <img src="images/memories-1.jpg" alt="Recuerdo juntos" />
-      </section>
+  <!-- ==========================
+            CONTENIDO
+  =========================== -->
 
-      <section class="section event fade-section">
+  <main>
+
+    <!-- Foto principal -->
+
+    <section class="photo-block photo-hero fade-section">
+
+      <figure>
+
+        <img
+          src="images/hero.jpg"
+          alt="Agustín y Micaela">
+
+      </figure>
+
+    </section>
+
+    <!-- Bienvenida -->
+
+    <section class="section welcome fade-section">
+
+      <h2>Bienvenidos</h2>
+
+      <div class="section-divider"></div>
+
+      <p class="welcome-text">
+
+        Después de tantos momentos compartidos,
+        llegó el día con el que siempre soñamos.
+
+      </p>
+
+      <p class="welcome-text">
+
+        Nos llena de felicidad poder celebrar este
+        nuevo comienzo junto a las personas que más
+        queremos.
+
+      </p>
+
+      <p class="welcome-text">
+
+        Esperamos que puedas acompañarnos y ser parte
+        de uno de los días más importantes de nuestras vidas.
+
+      </p>
+
+    </section>
+        <!-- ==========================
+          NUESTRA HISTORIA
+    =========================== -->
+
+    <section class="section story fade-section">
+
+      <h2>Nuestra historia</h2>
+
+      <div class="section-divider"></div>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <h3>Nos conocimos</h3>
+
+            <p>
+              El destino cruzó nuestros caminos y, sin imaginarlo,
+              comenzó la historia más bonita de nuestras vidas.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <h3>Nuestros primeros recuerdos</h3>
+
+            <p>
+              Compartimos viajes, risas, sueños y muchísimos momentos
+              que hoy forman parte de nuestra historia.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <h3>El compromiso</h3>
+
+            <p>
+              Un "sí" lleno de emoción que marcó el comienzo
+              del camino hacia este gran día.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <h3>Nuestra boda</h3>
+
+            <p>
+              Ahora queremos compartir con ustedes
+              el inicio de una nueva etapa.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================
+            FOTO
+    =========================== -->
+
+    <section class="photo-block fade-section">
+
+      <figure>
+
+        <img
+          src="images/memories-1.jpg"
+          alt="Agustín y Micaela compartiendo un momento especial">
+
+      </figure>
+
+    </section>
+
+    <!-- ==========================
+          INFORMACIÓN GENERAL
+    =========================== -->
+
+    <section class="section event-info fade-section">
+
+      <h2>El gran día</h2>
+
+      <div class="section-divider"></div>
+
+      <div class="event-summary">
+
+        <div class="summary-item">
+
+          <span class="summary-title">
+            Fecha
+          </span>
+
+          <span class="summary-value">
+            6 de febrero de 2027
+          </span>
+
+        </div>
+
+        <div class="summary-item">
+
+          <span class="summary-title">
+            Hora
+          </span>
+
+          <span class="summary-value">
+            A confirmar
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================
+          CEREMONIA
+    =========================== -->
+
+    <section class="section ceremony fade-section">
+
+      <div class="event-card">
+
+        <div class="event-icon">
+
+          <svg viewBox="0 0 64 64" width="54" height="54">
+
+            <path
+              d="M32 8 L52 24 V54 H12 V24 Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"/>
+
+            <path
+              d="M26 54 V34 H38 V54"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"/>
+
+            <path
+              d="M32 14 V28"
+              stroke="currentColor"
+              stroke-width="2"/>
+
+            <path
+              d="M26 20 H38"
+              stroke="currentColor"
+              stroke-width="2"/>
+
+          </svg>
+
+        </div>
+
         <h2>Ceremonia</h2>
-        <p>Horario a definir</p>
-        <p>Gruta Virgen de Fátima</p>
-        <a
-          href="https://maps.app.goo.gl/AY5rrQn5CKRhraPb7"
-          class="secondary-button"
-        >
-          Cómo llegar
-        </a>
-      </section>
 
-      <section class="section event fade-section">
-        <h2>Fiesta</h2>
-        <p>Horario a definir</p>
-        <p>Salón SUOES</p>
-        <a
-          href="https://maps.app.goo.gl/93oA8PSyXY9GQ97g9"
-          class="secondary-button"
-        >
-          Cómo llegar
-        </a>
-      </section>
+        <p class="event-time">
+          Horario a confirmar
+        </p>
 
-      <section class="photo-block fade-section">
-        <img src="images/memories-2.jpg" alt="Otro recuerdo" />
-      </section>
+        <p class="event-place">
 
-      <section class="section dresscode fade-section">
-        <h2>Dress Code</h2>
-        <p>Estrictamente formal</p>
-      </section>
+          Gruta Virgen de Fátima
 
-      <section class="section rsvp fade-section">
-        <h2>Confirmación de asistencia</h2>
-        <p class="rsvp-text">
-          Confirmar antes del <strong>6 de enero de 2027</strong>
         </p>
 
         <a
-          href="https://forms.gle/jbBnZB4XskvtCPh77"
+          href="https://maps.app.goo.gl/AY5rrQn5CKRhraPb7"
           target="_blank"
-          class="rsvp-button"
-        >
-          Confirmar asistencia
+          class="secondary-button">
+
+          Cómo llegar
+
         </a>
-      </section>
 
-      <section class="section gallery fade-section">
-        <h2>Momentos</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="images/gallery-1.jpg" alt="Momento especial" />
-          </div>
-          <div class="gallery-item">
-            <img src="images/gallery-2.jpg" alt="Momento especial" />
-          </div>
-          <div class="gallery-item">
-            <img src="images/gallery-3.jpg" alt="Momento especial" />
-          </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================
+              FIESTA
+    =========================== -->
+
+    <section class="section party fade-section">
+
+      <div class="event-card">
+
+        <div class="event-icon">
+
+          <svg viewBox="0 0 64 64" width="54" height="54">
+
+            <path
+              d="M20 18 H44 V54 H20 Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"/>
+
+            <path
+              d="M20 28 H44"
+              stroke="currentColor"
+              stroke-width="2"/>
+
+            <circle
+              cx="26"
+              cy="23"
+              r="1.8"
+              fill="currentColor"/>
+
+            <circle
+              cx="32"
+              cy="23"
+              r="1.8"
+              fill="currentColor"/>
+
+            <circle
+              cx="38"
+              cy="23"
+              r="1.8"
+              fill="currentColor"/>
+
+          </svg>
+
         </div>
-      </section>
-    </main>
 
-    <footer class="footer">
-      <p>Agustín & Micaela · 2027</p>
-    </footer>
-  </body>
-  <!-- PORTADA SOBRE -->
-  <div class="envelope-container" id="envelope">
-    <div class="envelope">
-      <div class="flap"></div>
-      <div class="seal" id="seal">
+        <h2>Fiesta</h2>
+
+        <p class="event-time">
+
+          Horario a confirmar
+
+        </p>
+
+        <p class="event-place">
+
+          Salón SUOES
+
+        </p>
+
+        <a
+          href="https://maps.app.goo.gl/93oA8PSyXY9GQ97g9"
+          target="_blank"
+          class="secondary-button">
+
+          Cómo llegar
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================
+            FOTO
+    =========================== -->
+
+    <section class="photo-block fade-section">
+
+      <figure>
+
+        <img
+          src="images/memories-2.jpg"
+          alt="Otro recuerdo de Agustín y Micaela">
+
+      </figure>
+
+    </section>
+
+    <!-- ==========================
+          DRESS CODE
+    =========================== -->
+
+    <section class="section dresscode fade-section">
+
+      <h2>Dress Code</h2>
+
+      <div class="section-divider"></div>
+
+      <p class="dress-title">
+
+        Estrictamente formal
+
+      </p>
+
+      <p class="dress-text">
+
+        Queremos que esta noche sea elegante,
+        por eso los invitamos a vestir de manera formal.
+
+      </p>
+
+    </section>
+
+    <!-- ==========================
+            GALERÍA
+    =========================== -->
+
+    <section class="section gallery fade-section">
+
+      <h2>Nuestros momentos</h2>
+
+      <div class="section-divider"></div>
+
+      <div class="gallery-grid">
+
+        <figure class="gallery-item">
+
+          <img
+            src="images/gallery-1.jpg"
+            alt="Recuerdo 1">
+
+        </figure>
+
+        <figure class="gallery-item">
+
+          <img
+            src="images/gallery-2.jpg"
+            alt="Recuerdo 2">
+
+        </figure>
+
+        <figure class="gallery-item">
+
+          <img
+            src="images/gallery-3.jpg"
+            alt="Recuerdo 3">
+
+        </figure>
+
+      </div>
+
+    </section>
+        <!-- ==========================
+          MESA DE REGALOS
+    =========================== -->
+
+    <section class="section gifts fade-section">
+
+      <h2>Mesa de regalos</h2>
+
+      <div class="section-divider"></div>
+
+      <p class="gifts-text">
+
+        El mejor regalo es compartir este momento con ustedes.
+
+      </p>
+
+      <p class="gifts-text">
+
+        Si además desean hacernos un obsequio para acompañarnos en esta nueva
+        etapa, podrán hacerlo mediante la siguiente cuenta.
+
+      </p>
+
+      <div class="gift-card">
+
+        <span class="gift-title">
+          Alias
+        </span>
+
+        <strong class="gift-alias">
+          AGUSTINYMICAELA
+        </strong>
+
+        <span class="gift-bank">
+          Banco a confirmar
+        </span>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================
+          CONFIRMACIÓN
+    =========================== -->
+
+    <section class="section rsvp fade-section">
+
+      <h2>Confirmación de asistencia</h2>
+
+      <div class="section-divider"></div>
+
+      <p class="rsvp-text">
+
+        Agradeceremos que puedas confirmar tu asistencia antes del
+
+      </p>
+
+      <p class="rsvp-date">
+
+        <strong>6 de enero de 2027</strong>
+
+      </p>
+
+      <a
+        href="https://forms.gle/jbBnZB4XskvtCPh77"
+        target="_blank"
+        class="rsvp-button">
+
+        Confirmar asistencia
+
+      </a>
+
+    </section>
+
+    <!-- ==========================
+        COMPARTÍ TUS FOTOS
+    =========================== -->
+
+    <section class="section photos fade-section">
+
+      <h2>Compartí tus fotos</h2>
+
+      <div class="section-divider"></div>
+
+      <p>
+
+        Queremos revivir este día desde cada mirada.
+
+      </p>
+
+      <p>
+
+        Compartí tus fotos utilizando el siguiente código QR.
+
+      </p>
+
+      <div class="qr-container">
+
+        <!-- Reemplazar por el QR real -->
+
+        <img
+          src="images/qr.png"
+          alt="Código QR para compartir fotografías">
+
+      </div>
+
+      <p class="hashtag">
+
+        #BodaAgustinYMicaela
+
+      </p>
+
+    </section>
+
+    <!-- ==========================
+          MENSAJE FINAL
+    =========================== -->
+
+    <section class="section final-message fade-section">
+
+      <div class="quote">
+
+        <p>
+
+          "Cada historia de amor es hermosa,
+          pero la nuestra es nuestra favorita."
+
+        </p>
+
+      </div>
+
+      <div class="gold-seal small">
+
         <span class="initial a">A</span>
         <span class="initial m">M</span>
-      </div>
-    </div>
-  </div>
 
-  <!-- MÚSICA -->
+      </div>
+
+      <h2>
+
+        Los esperamos
+
+      </h2>
+
+      <p>
+
+        Será un honor compartir este día tan especial junto a ustedes.
+
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- ==========================
+            FOOTER
+  =========================== -->
+
+  <footer class="footer">
+
+    <div class="footer-monogram">
+
+      <span class="initial a">A</span>
+      <span class="initial m">M</span>
+
+    </div>
+
+    <p class="footer-names">
+
+      Agustín & Micaela
+
+    </p>
+
+    <p class="footer-date">
+
+      6 de febrero de 2027
+
+    </p>
+
+    <div class="footer-divider"></div>
+
+    <small>
+
+      Gracias por acompañarnos en este nuevo comienzo ♥
+
+    </small>
+
+  </footer>
+
+  <!-- ==========================
+            MÚSICA
+  =========================== -->
+
   <audio id="bg-music" loop>
-    <source src="audio/music.mp3" type="audio/mpeg" />
+
+    <source
+      src="audio/music.mp3"
+      type="audio/mpeg">
+
   </audio>
 
-  <button class="music-toggle" id="musicToggle">🔊</button>
+  <button
+    id="musicToggle"
+    class="music-toggle"
+    aria-label="Activar o pausar música">
+
+    🔊
+
+  </button>
+
+</body>
+
 </html>

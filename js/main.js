@@ -1,97 +1,476 @@
-// =====================
-// SOBRE Y APERTURA
-// =====================
+/* ==================================================
+   AGUSTÍN & MICAELA
+   WEDDING INVITATION SCRIPT
+================================================== */
 
-const envelopeContainer = document.getElementById("envelope");
-const envelope = document.querySelector(".envelope");
-const seal = document.getElementById("seal");
-const music = document.getElementById("bg-music");
-const musicToggle = document.getElementById("musicToggle");
 
-seal.addEventListener("click", () => {
-  envelope.classList.add("open");
 
-  setTimeout(() => {
-  envelopeContainer.classList.add("hide");
-  document.body.classList.remove("opening");
-  document.body.classList.add("revealed");
-  document.body.style.overflow = "auto";
+/* ==================================================
+   ELEMENTOS
+================================================== */
 
-  music.play();
-  musicToggle.style.display = "block";
-}, 1400);
-});
 
-// =====================
-// CONTROL MÚSICA
-// =====================
+const envelopeContainer =
+document.getElementById("envelope");
 
-let isPlaying = true;
 
-musicToggle.addEventListener("click", () => {
-  if (isPlaying) {
-    music.pause();
-    musicToggle.textContent = "🔇";
-  } else {
-    music.play();
-    musicToggle.textContent = "🔊";
-  }
-  isPlaying = !isPlaying;
-});
+const envelope =
+document.querySelector(".envelope");
 
-// =====================
-// COUNTDOWN
-// =====================
 
-const weddingDate = new Date(2027, 1, 6, 0, 0, 0).getTime();
+const seal =
+document.getElementById("seal");
 
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
+const music =
+document.getElementById("bg-music");
 
-  if (distance <= 0) {
-    daysEl.textContent = "00";
-    hoursEl.textContent = "00";
-    minutesEl.textContent = "00";
-    secondsEl.textContent = "00";
-    return;
-}
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
+const musicToggle =
+document.getElementById("musicToggle");
 
-  daysEl.textContent = String(days).padStart(2, "0");
-  hoursEl.textContent = String(hours).padStart(2, "0");
-  minutesEl.textContent = String(minutes).padStart(2, "0");
-  secondsEl.textContent = String(seconds).padStart(2, "0");
-}
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
 
-// =====================
-// FADE ON SCROLL
-// =====================
+let musicPlaying = false;
 
-const fadeSections = document.querySelectorAll(".fade-section");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 },
+
+/* ==================================================
+   APERTURA DEL SOBRE
+================================================== */
+
+
+if(seal){
+
+
+seal.addEventListener(
+"click",
+()=>{
+
+
+// abrir sobre
+
+envelope.classList.add("open");
+
+
+
+// esperar animación
+
+setTimeout(()=>{
+
+
+// esconder portada
+
+envelopeContainer.classList.add("hide");
+
+
+
+// mostrar contenido
+
+document.body.classList.remove(
+"opening"
 );
 
-fadeSections.forEach((section) => observer.observe(section));
+
+document.body.classList.add(
+"revealed"
+);
+
+
+
+// iniciar música
+
+playMusic();
+
+
+
+if(musicToggle){
+
+musicToggle.style.display="flex";
+
+}
+
+
+},1400);
+
+
+
+}
+
+);
+
+
+}
+
+
+
+
+/* ==================================================
+   MÚSICA
+================================================== */
+
+
+function playMusic(){
+
+
+if(!music) return;
+
+
+
+music.volume = 0.35;
+
+
+
+music.play()
+
+.then(()=>{
+
+
+musicPlaying=true;
+
+
+updateMusicButton();
+
+
+})
+
+
+.catch(()=>{
+
+
+console.log(
+"La reproducción automática fue bloqueada"
+);
+
+
+});
+
+
+}
+
+
+
+
+function pauseMusic(){
+
+
+if(!music) return;
+
+
+music.pause();
+
+
+musicPlaying=false;
+
+
+updateMusicButton();
+
+
+}
+
+
+
+function updateMusicButton(){
+
+
+if(!musicToggle)
+return;
+
+
+musicToggle.textContent =
+musicPlaying
+? "🔊"
+: "🔇";
+
+
+}
+
+
+
+
+if(musicToggle){
+
+
+musicToggle.addEventListener(
+"click",
+()=>{
+
+
+if(musicPlaying){
+
+pauseMusic();
+
+}
+else{
+
+playMusic();
+
+}
+
+
+});
+
+
+}
+
+
+
+
+
+
+/* ==================================================
+   COUNTDOWN
+================================================== */
+
+
+
+const weddingDate =
+new Date(
+"February 6, 2027 00:00:00"
+).getTime();
+
+
+
+
+const days =
+document.getElementById("days");
+
+
+const hours =
+document.getElementById("hours");
+
+
+const minutes =
+document.getElementById("minutes");
+
+
+const seconds =
+document.getElementById("seconds");
+
+
+
+
+function updateCountdown(){
+
+
+const now =
+new Date().getTime();
+
+
+
+const distance =
+weddingDate-now;
+
+
+
+if(distance <=0){
+
+
+if(days)
+days.textContent="00";
+
+
+if(hours)
+hours.textContent="00";
+
+
+if(minutes)
+minutes.textContent="00";
+
+
+if(seconds)
+seconds.textContent="00";
+
+
+return;
+
+
+}
+
+
+
+const d =
+Math.floor(
+distance /
+(1000*60*60*24)
+);
+
+
+
+const h =
+Math.floor(
+(distance /
+(1000*60*60))
+%24
+);
+
+
+
+const m =
+Math.floor(
+(distance /
+(1000*60))
+%60
+);
+
+
+
+const s =
+Math.floor(
+(distance /
+1000)
+%60
+);
+
+
+
+
+if(days)
+days.textContent=
+String(d).padStart(2,"0");
+
+
+
+if(hours)
+hours.textContent=
+String(h).padStart(2,"0");
+
+
+
+if(minutes)
+minutes.textContent=
+String(m).padStart(2,"0");
+
+
+
+if(seconds)
+seconds.textContent=
+String(s).padStart(2,"0");
+
+
+
+}
+
+
+
+setInterval(
+updateCountdown,
+1000
+);
+
+
+updateCountdown();
+
+
+
+
+
+
+
+/* ==================================================
+   ANIMACIONES SCROLL
+================================================== */
+
+
+const sections =
+document.querySelectorAll(
+".fade-section"
+);
+
+
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+
+entries.forEach(
+(entry)=>{
+
+
+if(entry.isIntersecting){
+
+
+entry.target.classList.add(
+"is-visible"
+);
+
+
+
+observer.unobserve(
+entry.target
+);
+
+
+
+}
+
+
+
+});
+
+
+},
+{
+
+threshold:.15
+
+}
+
+);
+
+
+
+
+sections.forEach(
+(section)=>{
+
+
+observer.observe(
+section
+);
+
+
+});
+
+
+
+
+
+
+
+/* ==================================================
+   EFECTO PARALLAX SUAVE HERO
+================================================== */
+
+
+const hero =
+document.querySelector(".hero");
+
+
+
+window.addEventListener(
+"scroll",
+()=>{
+
+
+if(!hero)
+return;
+
+
+
+const scroll =
+window.scrollY;
+
+
+
+hero.style.transform =
+`
+translateY(${scroll * .08}px)
+`;
+
+
+
+}
+
+);
