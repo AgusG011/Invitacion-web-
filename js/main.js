@@ -12,10 +12,14 @@ seal.addEventListener("click", () => {
   envelope.classList.add("open");
 
   setTimeout(() => {
-    envelopeContainer.classList.add("hide");
-    music.play();
-    musicToggle.style.display = "block";
-  }, 1400);
+  envelopeContainer.classList.add("hide");
+  document.body.classList.remove("opening");
+  document.body.classList.add("revealed");
+  document.body.style.overflow = "auto";
+
+  music.play();
+  musicToggle.style.display = "block";
+}, 1400);
 });
 
 // =====================

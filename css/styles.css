@@ -361,11 +361,22 @@ body {
 /* =====================
    ANIMACIÓN APERTURA CARTA
 ===================== */
+body.opening{
+    overflow:hidden;
+}
+body.opening main,
+body.opening header,
+body.opening footer {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
 
-body.opening {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: letterOpen 1.4s ease forwards;
+body.revealed main,
+body.revealed header,
+body.revealed footer {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @keyframes letterOpen {
