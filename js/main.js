@@ -54,7 +54,13 @@ function updateCountdown() {
   const now = new Date().getTime();
   const distance = weddingDate - now;
 
-  if (distance <= 0) return;
+  if (distance <= 0) {
+    daysEl.textContent = "00";
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+    return;
+}
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
