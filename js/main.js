@@ -461,15 +461,10 @@ return;
 
 const scroll =
 window.scrollY;
-
-
-
 hero.style.transform =
 `
 translateY(${scroll * .08}px)
 `;
-
-
 
 }
 
